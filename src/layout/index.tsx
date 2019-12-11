@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -24,9 +24,7 @@ export default function Layout() {
           <Link to="/dashboard">Dashboard</Link>
         </li>
       </ul>
-
       <hr />
-
       <Switch>
         <Route exact path="/">
           <div>home</div>
