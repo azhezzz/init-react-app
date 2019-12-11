@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { LayoutWrapper, NavWrapper } from './styled';
 import router from '../router';
 
 const tabs = [
@@ -17,14 +18,16 @@ const tabs = [
   },
 ];
 const Layout = () => (
-  <div>
-    <ul>
-      {tabs.map(item => (
-        <li key={item.link}>
-          <Link to={item.link}>{item.text}</Link>
-        </li>
-      ))}
-    </ul>
+  <LayoutWrapper>
+    <NavWrapper>
+      <ul>
+        {tabs.map(item => (
+          <li key={item.link}>
+            <Link to={item.link}>{item.text}</Link>
+          </li>
+        ))}
+      </ul>
+    </NavWrapper>
     <hr />
     <Switch>
       {router.map(item => (
@@ -33,7 +36,7 @@ const Layout = () => (
         </Route>
       ))}
     </Switch>
-  </div>
+  </LayoutWrapper>
 );
 
 export default Layout;
