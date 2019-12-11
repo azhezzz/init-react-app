@@ -20,7 +20,7 @@ const Layout = () => (
   <div>
     <ul>
       {tabs.map(item => (
-        <li>
+        <li key={item.link}>
           <Link to={item.link}>{item.text}</Link>
         </li>
       ))}
@@ -28,7 +28,7 @@ const Layout = () => (
     <hr />
     <Switch>
       {router.map(item => (
-        <Route exact path={item.path}>
+        <Route exact path={item.path} key={item.path}>
           {item.component}
         </Route>
       ))}
