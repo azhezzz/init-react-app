@@ -2,7 +2,8 @@
   "root": true,
   "env": {
     "browser": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "node": true
   },
   "extends": [
     "airbnb",
@@ -18,9 +19,10 @@
   },
   "plugins": ["@typescript-eslint", "jest"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx", ".js", ".ts"] }],
     "spaced-comment": ["error", "always", { "markers": ["/"] }],
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "import/extensions": [1, { "extensions": [".jsx", ".tsx", ".js", ".ts"] }]
   },
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
