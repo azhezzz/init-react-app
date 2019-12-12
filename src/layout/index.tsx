@@ -17,7 +17,7 @@ const tabs = [
     text: '赛后',
   },
 ];
-const Layout = () => (
+const Layout: () => React.ReactElement = () => (
   <LayoutWrapper>
     <NavWrapper>
       <ul>
