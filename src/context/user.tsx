@@ -1,9 +1,10 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect } from "react";
+import { useCustomizeReducer } from "./reducer";
 
 const Context = React.createContext<any>(null);
 
 const initialState = {
-  name: { a: 1 }
+  name: { a: 1, b: 2 }
 };
 
 const Reducer = (
@@ -11,14 +12,17 @@ const Reducer = (
   { type, payload }: { type: string; payload?: any }
 ) => {
   switch (type) {
-    case "initial":
-      return { ...state, name: { ...state.name, a: 3 } };
+    case "initial": {
+      state.name.a = 2;
+      break;
+    }
+    default:
+      return state;
   }
-  return state;
 };
 
 export const UserProvider = (props: any) => {
-  const [state, dispatch] = useReducer(Reducer, initialState);
+  const [state, dispatch] = useCustomizeReducer(Reducer, initialState);
   useEffect(() => {
     const timer = setInterval(() => {
       dispatch({ type: "initial" });
